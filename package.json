@@ -14,7 +14,8 @@
     ],
     "parser": "babel-eslint",
     "env": {
-      "browser": true
+      "browser": true,
+      "es6": true
     }
   },
   "devDependencies": {
@@ -44,8 +45,6 @@
     "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.6.0",
-    "@babel/runtime": "^7.8.0",
-    "babel-polyfill": "^6.26.0"
+    "@babel/runtime": "^7.8.0"
   }
 }
