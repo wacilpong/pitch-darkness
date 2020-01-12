@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "esnext",
+    "baseUrl": ".",
+    "paths": {
+      // alis example
+      // "imaages": ["*", "src/assets/images"],
+      // "styles": ["*", "src/assets/styles"]
+      "*": ["*", "src/*"]
+    },
+    "isolatedModules": true
+  }
+}

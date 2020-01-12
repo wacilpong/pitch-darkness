@@ -1,0 +1,119 @@
+@import "./assets/styles/base";
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes mad {
+  from {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -50, -100, 0, 1.1)
+      scale(0.1) rotate(0deg);
+  }
+
+  50% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0.9)
+      scale(2) rotate(6deg);
+  }
+
+  to {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 50, 100, 0, 1.1)
+      scale(0.7) rotate(-10deg);
+  }
+}
+
+@keyframes font-change {
+  from {
+    color: black;
+    font-size: 0.5rem;
+  }
+
+  10% {
+    color: white;
+  }
+
+  30% {
+    color: blueviolet;
+  }
+
+  50% {
+    color: wheat;
+  }
+
+  70% {
+    color: black;
+  }
+
+  90% {
+    color: aqua;
+  }
+
+  to {
+    color: white;
+    font-size: 20rem;
+  }
+}
+
+section.frog {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  img {
+    width: 15rem;
+    animation: spin 3s linear infinite;
+  }
+
+  p {
+    color: red;
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 3rem;
+
+    a {
+      cursor: pointer;
+      font: inherit;
+      color: inherit;
+      background-color: transparent;
+      text-decoration: none;
+      border: 0 none;
+      padding: 0;
+    }
+  }
+}
+
+section.merong {
+  height: 100%;
+
+  .rainbow {
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+    height: 10%;
+    background: linear-gradient(
+      red 0%,
+      orange 25%,
+      yellow 50%,
+      green 75%,
+      blue 100%
+    );
+    animation: mad 2s linear infinite;
+  }
+
+  .text {
+    animation: font-change 5s infinite;
+    position: absolute;
+    text-align: center;
+    font-family: serif;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin-top: 10%;
+  }
+}

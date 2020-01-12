@@ -1,0 +1,13 @@
+$baseFont: 18px;
+
+html,
+body,
+#container {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-size: $baseFont;
+  background: linear-gradient(180deg, #5bb346, black);
+}
