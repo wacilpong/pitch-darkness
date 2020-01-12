@@ -1,11 +1,9 @@
 const path = require("path");
 const webpack = require("webpack");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const nodeExternals = require("webpack-node-externals");
 
 const clientConfig = (env, options) => {
   const config = {
@@ -14,7 +12,7 @@ const clientConfig = (env, options) => {
       main: "./src/index.js"
     },
     output: {
-      path: path.resolve(__dirname, "dist"),
+      path: path.resolve(__dirname, "public"),
       filename: "[name].js",
       publicPath: "/"
     },
@@ -114,7 +112,7 @@ const clientConfig = (env, options) => {
     config.devServer = {
       hot: true,
       host: "0.0.0.0",
-      contentBase: path.resolve(__dirname, "dist"),
+      contentBase: path.resolve(__dirname, "public"),
       stats: {
         color: true
       }
@@ -125,10 +123,9 @@ const clientConfig = (env, options) => {
       new HtmlWebPackPlugin({
         template: "./src/index.html",
         filename: "index.html",
-        excludeChunks: ["server"],
-        showErrors: true
+        showErrors: true,
+        hash: true
       }),
-      new CleanWebpackPlugin(["dist"]),
       new MiniCssExtractPlugin({
         filename: "[name].css",
         chunkFilename: "[id].css"

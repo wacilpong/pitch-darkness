@@ -4,10 +4,8 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon ./dist/server.js",
-    "build:dev": "rm -rf dist && webpack --mode development",
-    "build:prod": "rm -rf dist && webpack --mode production",
-    "dev-client": "webpack-dev-server --open --mode development",
-    "dev-server": "nodemon ./dist/server.js"
+    "build": "rm -rf dist && webpack --mode production",
+    "dev": "webpack-dev-server --open --mode development"
   },
   "eslintConfig": {
     "plugins": [],
@@ -27,7 +25,6 @@
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.4.1",
     "eslint": "^6.8.0",
     "eslint-loader": "^3.0.3",
@@ -44,9 +41,7 @@
     "url-loader": "^2.3.0",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.9",
-    "webpack-dev-middleware": "^3.7.2",
-    "webpack-dev-server": "^3.10.1",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
