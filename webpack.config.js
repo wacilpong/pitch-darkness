@@ -39,7 +39,21 @@ const clientConfig = (env, options) => {
             loader: "babel-loader",
             options: {
               presets: ["@babel/preset-env"],
-              plugins: ["@babel/transform-runtime"] // 제안단계에 있는 사양을 지원하기 위한 바벨 플러그인들
+
+              // By default, @babel/plugin-transform-runtime doesn't polyfill proposals.
+              // If you are using corejs: 3, you can opt into this by enabling using the proposals: true option.
+              plugins: [
+                [
+                  "@babel/plugin-transform-runtime",
+                  {
+                    absoluteRuntime: false, // default
+                    corejs: 3,
+                    helpers: true, // default
+                    regenerator: true, // default
+                    useESModules: false // default
+                  }
+                ]
+              ] // 제안단계에 있는 사양을 지원하기 위한 바벨 플러그인들
             }
           }
         },

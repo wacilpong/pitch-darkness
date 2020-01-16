@@ -3,12 +3,8 @@
     [
       "@babel/preset-env",
       {
-        "targets": {
-          "browsers": ["last 2 versions"]
-        },
-        "debug": true
+        "targets": "> 0.25%, not dead"
       }
     ]
-  ],
-  "plugins": ["@babel/transform-runtime"]
+  ]
 }
